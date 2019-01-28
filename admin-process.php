@@ -57,6 +57,45 @@ if(isset($_POST["saveServices"])){
     DatabaseQuery::update("services", "value = '$review'", "id=6");
     redirect("admin_services");
 }
+
+if(isset($_POST["submit-new-media"])){
+    $title = str_replace(" ", " ", addslashes($_POST["title"]));
+    $body = str_replace(" ", " ", addslashes($_POST["body"]));
+    $target_dir = "media/";
+    $target_file = ($_FILES["image"]["name"] != "") ? $target_dir.basename($_FILES["image"]["name"]) : "" ;
+    ($target_file != "") ? move_uploaded_file($_FILES["image"]["tmp_name"], $target_file): "";
+    DatabaseQuery::insert("media", "title, body, image", "?, ?, ?", ["$title", "$body", "$target_file"]);
+    alert("You have successfully added the content");
+    redirect("admin_media");
+}
+
+if(isset($_GET["delete"]) && $_GET["id"] != ""){
+    $id = $_GET["id"];
+    DatabaseQuery::delete("media", "id = $id");
+    alert("You have successfully deleted an item");
+    redirect("admin_media");
+}
+
+if(isset($_GET["edit"]) && $_GET["id"] != ""){
+    $id = $_GET["id"];
+    header("location: admin_media.php?q=$id");
+}
+
+if(isset($_POST["update-media"])){
+    $id = $_GET["id"];
+    $title = $_POST["title"];
+    $body = $_POST["body"];
+    $target_dir = "media/";
+    $target_file = ($_FILES["image"]["name"] != "") ? $target_dir.basename($_FILES["image"]["name"]) : "" ;
+    ($target_file != "") ? move_uploaded_file($_FILES["image"]["tmp_name"], $target_file): "";
+    DatabaseQuery::update("media", "title = '$title', body = '$body', image = '$target_file'", "id = $id");
+    redirect("admin_media");
+
+}
+
 if(isset($_GET["logout"])){
     redirect("admin");
 }
+
+alert("Please select an item");
+redirect("admin_media");

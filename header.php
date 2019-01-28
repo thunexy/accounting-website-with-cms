@@ -27,12 +27,16 @@
                 <a class="nav-link link text-primary display-4" href="about.php">
                     About Spearmans</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link link text-primary display-4" href="media.php">
+                    Media</a>
+            </li>
             <li class="nav-item"><a class="nav-link link text-primary display-4" href="services.php">
                     Services</a></li>
             <li class="nav-item"><a class="nav-link link text-primary display-4" href="contact.php">
                     Contact Us</a></li>
         </ul>
-        <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" target="_blank" href="admin.php">Admin
+        <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4 text-nowrap" target="_blank" href="admin.php">Admin
             </a></div>
 
         <div class="navbar-buttons mbr-section-btn display-7" style="color: #6b6c6c">Call: 020 8786 3700 <br/><span class="font-size: 2rem;">Free Initial Consultation</span></div>
