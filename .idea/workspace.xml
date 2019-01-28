@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dabeeaa-4dac-42ac-be5e-43c5ddffa5f8" name="Default" comment="Added media content and admin panel for editing it">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/media" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin_media.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media.php" />
+    <list default="true" id="7dabeeaa-4dac-42ac-be5e-43c5ddffa5f8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin-process.php" afterPath="$PROJECT_DIR$/admin-process.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_header.php" afterPath="$PROJECT_DIR$/admin_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -186,6 +181,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Georgina Ayoola" />
         <option value="Adetoye" />
       </list>
     </option>
@@ -305,12 +301,20 @@
       <updated>1546865092087</updated>
       <workItem from="1546865100141" duration="10817000" />
       <workItem from="1546924857688" duration="2772000" />
-      <workItem from="1548580169963" duration="12302000" />
+      <workItem from="1548580169963" duration="12478000" />
     </task>
+    <task id="LOCAL-00001" summary="Added media content and admin panel for editing it">
+      <created>1548642925613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548642925614</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25891000" />
+    <option name="totallyTimeSpent" value="26067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />

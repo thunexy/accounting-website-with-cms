@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="wavepalm-spearmans" uploadOnCheckin="f80333e4-21b9-483c-a87c-b266b2300948">
+    <serverData>
+      <paths name="wavepalm-spearmans">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/spearmans" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="wavepalm-spearmans" />
+  </component>
+</project>
