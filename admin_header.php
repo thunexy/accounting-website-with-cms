@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link link text-primary display-4" href="admin_media.php">
-                    Edit Media</a>
+                    Edit Events & Seminars</a>
             </li>
             <li class="nav-item"><a class="nav-link link text-primary display-4" href="admin_services.php">
                     Edit Services</a></li>

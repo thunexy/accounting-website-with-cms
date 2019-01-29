@@ -27,7 +27,12 @@ $media = DatabaseQuery::select("media", "*", "", "m");
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/spearmans/css/mbr-additional.css" type="text/css">
-
+    <link rel="stylesheet" href="froala/css/froala_editor.pkgd.min.css">
+    <style>
+        .fr-wrapper div:first-child{
+            display: none !important;
+        }
+    </style>
 
 </head>
 <body>
@@ -58,6 +63,7 @@ $media = DatabaseQuery::select("media", "*", "", "m");
                         <input class="form-control" name="title" type="text" value="<?php echo $result['title']; ?>" placeholder="Enter the title"/><br/>
                         <input class="form-control" name="image" type="file"
                                accept="image/jpeg,image/png,image/gif"/><br/>
+                        <div id="iFroala-editor"></div>
                         <textarea rows="10" class="form-control" name="body" type="text"
                                   placeholder="Enter the write-up"><?php echo $result['body']; ?></textarea><br/>
                         <input type="submit" value="Update Content" name="update-media" class="form-control"
@@ -127,7 +133,8 @@ $media = DatabaseQuery::select("media", "*", "", "m");
                     <form action="admin-process.php" method="post" enctype="multipart/form-data">
                         <input class="form-control" name="title" type="text" placeholder="Enter the title"/><br/>
                         <input class="form-control" name="image" type="file"
-                               accept="image/jpeg,image/png,image/gif"/><br/>
+                               accept="video/*,image/jpeg,image/png,image/gif,"/><br/>
+                        <div id="iFroala-editor"></div>
                         <textarea rows="10" class="form-control" name="body" type="text"
                                   placeholder="Enter the write-up"></textarea><br/>
                         <input type="submit" value="Add Content" name="submit-new-media" class="form-control"
@@ -153,7 +160,13 @@ $media = DatabaseQuery::select("media", "*", "", "m");
 <script src="assets/dropdown/js/script.min.js"></script>
 <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="assets/theme/js/script.js"></script>
+<script type='text/javascript' src='froala/js/froala_editor.min.js'></script>
+<script type="text/javascript" src="froala/js/froala_editor.pkgd.min.js"></script>
 <script>
+    $('#iFroala-editor').froalaEditor({
+        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help', 'html', '|', 'undo', 'redo']
+    });
+    $('.fr-placeholder').hide();
     $('.existing-media').click(function(){
         $('.existing-media').css("border", "none");
         $(this).css("border", "4px solid #379bce");

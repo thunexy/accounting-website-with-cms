@@ -28,6 +28,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/spearmans/css/mbr-additional.css" type="text/css">
 
+    <link rel="stylesheet" href="froala/css/froala_editor.pkgd.min.css">
 
 </head>
 <body>
@@ -135,7 +136,13 @@ $services = DatabaseQuery::select("services", "value", "", "m");
 <script src="assets/dropdown/js/script.min.js"></script>
 <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="assets/theme/js/script.js"></script>
-
+<script type='text/javascript' src='froala/js/froala_editor.min.js'></script>
+<script type="text/javascript" src="froala/js/froala_editor.pkgd.min.js"></script>
+<script>
+    $('#iFroala-editor').froalaEditor({
+        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help', 'html', '|', 'undo', 'redo']
+    });
+</script>
 
 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
 <input name="animation" type="hidden">
