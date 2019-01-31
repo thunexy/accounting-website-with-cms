@@ -58,9 +58,9 @@ if(isset($_POST["saveServices"])){
     redirect("admin_services");
 }
 
-if(isset($_POST["submit-new-media"])){
-    $title = str_replace(" ", " ", addslashes($_POST["title"]));
-    $body = str_replace(" ", " ", addslashes($_POST["body"]));
+if(isset($_REQUEST["submit-new-media"])){
+    $title = str_replace(" ", " ", addslashes($_REQUEST["title"]));
+    $body = str_replace(" ", " ", addslashes($_REQUEST["body"]));
     $target_dir = "media/";
     $target_file = ($_FILES["image"]["name"] != "") ? $target_dir.basename($_FILES["image"]["name"]) : "" ;
     ($target_file != "") ? move_uploaded_file($_FILES["image"]["tmp_name"], $target_file): "";
@@ -82,13 +82,14 @@ if(isset($_GET["edit"]) && $_GET["id"] != ""){
 }
 
 if(isset($_POST["update-media"])){
-    $id = $_GET["id"];
+    $id = $_POST["id"];
     $title = $_POST["title"];
     $body = $_POST["body"];
     $target_dir = "media/";
     $target_file = ($_FILES["image"]["name"] != "") ? $target_dir.basename($_FILES["image"]["name"]) : "" ;
     ($target_file != "") ? move_uploaded_file($_FILES["image"]["tmp_name"], $target_file): "";
     DatabaseQuery::update("media", "title = '$title', body = '$body', image = '$target_file'", "id = $id");
+    alert("You have successfully updated the content");
     redirect("admin_media");
 
 }

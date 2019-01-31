@@ -32,6 +32,8 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
     <link rel="stylesheet" href="assets/spearmans/css/mbr-additional.css" type="text/css">
 
     <link rel="stylesheet" href="froala/css/froala_editor.pkgd.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body>
@@ -70,7 +72,6 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                 <div class="col-md-6 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <span>Welcome to Spearmans</span>
-                        <div id="welcome-to-spearmans"></div>
                         <textarea rows="10" name="welcome" id="t-welcome-to-spearmans" required="required" placeholder="Welcome to Spearmans"
                                   class="form-control" style="padding: 10px;"><?php echo $home["value"]; ?></textarea>
                     </div>
@@ -78,7 +79,6 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                 <div class="col-md-6 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <span>Mission Statement</span>
-                        <div id="mission-statement"></div>
                         <textarea rows="10" name="mission" id="t-mission" required="required" placeholder="Mission Statement"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $mission["value"]; ?></textarea>
@@ -93,7 +93,6 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                 <div class="col-md-6 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <span>Support</span>
-                        <div id="support"></div>
                         <textarea rows="10" name="support" id="t-support" required="required" placeholder="Support"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[0]["value"]; ?></textarea>
@@ -102,7 +101,6 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                 <div class="col-md-6 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <span>Fixed Prices</span>
-                        <div id="fixed-prices"></div>
                         <textarea rows="10" name="fixed" id="t-fixed-prices" required="required" placeholder="Fixed Prices"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[1]["value"]; ?></textarea>
@@ -111,7 +109,6 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                 <div class="col-md-6 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <span>Tax Return</span>
-                        <div id="tax-return"></div>
                         <textarea rows="10" name="tax" id="t-tax-return" required="required" placeholder="Mission Statement"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[2]["value"]; ?></textarea>
@@ -130,8 +127,7 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                     <div class="form-group">
                         <input class="form-control" style="padding: 0 auto" name="name1"  placeholder="First Testimonial"
                                value="<?php echo $testimonials[0]['name']; ?>"/><br/>
-                        <div id="testimonial-1"></div>
-                        <textarea rows="5" name="test1" id="t-testimonial-1" required="required" placeholder="Support"
+                        <textarea rows="10" name="test1" id="t-testimonial-1" required="required" placeholder="Support"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $testimonials[0]["value"]; ?></textarea>
                     </div>
@@ -140,8 +136,7 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                     <div class="form-group">
                         <input class="form-control" style="padding: 0 auto" name="name2"  placeholder="Second Testimonial"
                                value="<?php echo $testimonials[1]['name']; ?>"/><br/>
-                        <div id="testimonial-2"></div>
-                        <textarea rows="5" name="test2" id="t-testimonial-2" required="required" placeholder="Fixed Prices"
+                        <textarea rows="10" name="test2" id="t-testimonial-2" required="required" placeholder="Fixed Prices"
                                   class="form-control" style="padding: 10px;"><?php echo $testimonials[1]["value"]; ?></textarea>
                     </div>
                 </div>
@@ -149,8 +144,7 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
                     <div class="form-group">
                         <input class="form-control" style="padding: 0 auto" name="name3"
                                value="<?php echo $testimonials[2]['name']; ?>" placeholder="Third Testimonial"/><br/>
-                        <div id="testimonial-3"></div>
-                        <textarea rows="5" name="test3" id="t-testimonial-3" required="required" placeholder="Tax Return"
+                        <textarea rows="10" name="test3" id="t-testimonial-3" required="required" placeholder="Tax Return"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $testimonials[2]["value"]; ?></textarea>
                     </div>
@@ -187,34 +181,8 @@ $testimonials = DatabaseQuery::select("testimony", "name, value", "", "m");
 <script src="assets/dropdown/js/script.min.js"></script>
 <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="assets/theme/js/script.js"></script>
-<script type='text/javascript' src='froala/js/froala_editor.min.js'></script>
-<script type="text/javascript" src="froala/js/froala_editor.pkgd.min.js"></script>
 <script>
 
-    $('#welcome-to-spearmans, #mission-statement, #support, #fixed-prices, #tax-return, #testimonial-1, #testimonial-2, #testimonial-3').froalaEditor({
-        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help', 'html', '|', 'undo', 'redo']
-    });
-
-
-//    let welcomeToSpearmans = $('#welcome-to-spearmans');
-//    let missionStatement = $('#mission-statement');
-//    let support = $("#support");
-//    let fixedPrices = $("#fixed-prices");
-//    let taxReturn = $("#tax-return");
-//    let test1 = $("#testimonial-1");
-//    let test2 = $("#testimonial-2");
-//    let test3 = $("#testimonial-3");
-//    let tWelcomeToSpearmans = $("#t-welcome-to-spearmans");
-//    let tMissionStatement = $("#t-mission");
-//    let tSupport = $("#t-support");
-//    let tFixedPrices = $("#t-fixed-prices");
-//    let tTaxReturn = $("#t-tax-return");
-//    let tTest1 = $("#t-testimonial-1");
-//    let tTest2 = $("#t-testimonial-2");
-//    let tTest3 = $("#t-testimonial-3");
-
-    $('.fr-placeholder').hide();
-    $('.fr-wrapper').hide();
 </script>
 
 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>

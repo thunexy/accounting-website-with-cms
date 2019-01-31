@@ -27,9 +27,14 @@ $services = DatabaseQuery::select("services", "value", "", "m");
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/spearmans/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="froala/css/froala_editor.pkgd.min.css">
-
+<style>
+    /*.fr-wrapper div:first-child{*/
+        /*display: none !important;*/
+    /*}*/
+</style>
 </head>
 <body>
 
@@ -55,7 +60,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <h1>Our Services</h1><br/>
-                        <textarea rows="10" name="services" required="required" placeholder="Our Services"
+                        <textarea rows="10" name="services" id="t-our-services" required="required" placeholder="Our Services"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[0]["value"]; ?></textarea>
                     </div>
@@ -64,7 +69,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <h1>Accounting Services</h1><br/>
-                        <textarea rows="10" name="accounting" required="required" placeholder="Accounting Services"
+                        <textarea rows="10" name="accounting" id="t-accounting-services" required="required" placeholder="Accounting Services"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[1]["value"]; ?></textarea>
                     </div>
@@ -73,7 +78,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <h1>Tax Services</h1><br/>
-                        <textarea rows="10" name="tax" required="required" placeholder="Tax Services"
+                        <textarea rows="10" name="tax" required="required" id="t-tax-services" placeholder="Tax Services"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[2]["value"]; ?></textarea>
                     </div>
@@ -81,8 +86,9 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <br/><br/>
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
+
                         <h1>Business Development Services</h1><br/>
-                        <textarea rows="10" name="business" required="required" placeholder="Business Development Services"
+                        <textarea rows="10" name="business" required="required" id="t-business-services" placeholder="Business Development Services"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[3]["value"]; ?></textarea>
                     </div>
@@ -91,7 +97,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <h1>Raising Finance</h1><br/>
-                        <textarea rows="10" name="finance" required="required" placeholder="Raising finance"
+                        <textarea rows="10" name="finance" required="required" id="t-raising-finance" placeholder="Raising finance"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[4]["value"]; ?></textarea>
                     </div>
@@ -100,7 +106,7 @@ $services = DatabaseQuery::select("services", "value", "", "m");
                 <div class="col-md-12 offset-lg-2 col-sm-12" style="margin: 0 auto">
                     <div class="form-group">
                         <h1>Diagnostic Review</h1><br/>
-                        <textarea rows="10" name="review" required="required" placeholder="Diagnostic Review"
+                        <textarea rows="10" name="review" required="required" id="t-diagnostic-review" placeholder="Diagnostic Review"
                                   class="form-control"
                                   style="padding: 10px;"><?php echo $services[5]["value"]; ?></textarea>
                     </div>
@@ -136,12 +142,8 @@ $services = DatabaseQuery::select("services", "value", "", "m");
 <script src="assets/dropdown/js/script.min.js"></script>
 <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="assets/theme/js/script.js"></script>
-<script type='text/javascript' src='froala/js/froala_editor.min.js'></script>
-<script type="text/javascript" src="froala/js/froala_editor.pkgd.min.js"></script>
 <script>
-    $('#iFroala-editor').froalaEditor({
-        toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help', 'html', '|', 'undo', 'redo']
-    });
+
 </script>
 
 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>

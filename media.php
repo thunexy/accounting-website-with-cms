@@ -49,7 +49,7 @@ if (count($media) < 1) {
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <h4 class="card-title pt-3 mbr-fonts-style display-7 text-center">
-                                        <strong>Media contents will be available soon.</strong>
+                                        <strong>This page will be available soon.</strong>
                                     </h4>
                                 </div>
                             </div>
@@ -64,22 +64,24 @@ if (count($media) < 1) {
 } else {
 
     for ($i = 0; $i < count($media); $i++) {
+        $multimedia = $media[$i]["image"];
         if ($i % 2 == 0) {
             ?>
 
             <section class="features6 cid-rehAgJBnCG pt-4 pb-4" id="features6-a" style="background: #339ccb">
                 <div class="container">
-                    <div class="media-container-row">
+                    <div class="media-container-row" style="width: 100%">
 
-                        <div class="row">
+                        <div class="row" style="width: 100%">
                             <div class="card p-3 col-12">
                                 <div class="card-box pt-4" style="padding: 2.5rem !important">
                                     <div class="row">
                                         <?php
-                                        if ($media[$i]["image"] != "") {
+
+                                        if ($multimedia != "" && (strpos($multimedia, "png") || strpos($multimedia, "jpg"))) {
                                             ?>
                                             <div class="col-sm-12 col-md-4">
-                                                <img src="<?php echo $media[$i]['image']; ?>" style="width: 100%"/>
+                                                <img src="<?php echo $multimedia; ?>" style="width: 100%"/>
                                             </div>
                                             <div class="col-sm-12 col-md-8">
                                                 <h4 class="card-title pt-3 mbr-fonts-style display-6 text-center">
@@ -89,9 +91,31 @@ if (count($media) < 1) {
                                                 <p class="mbr-text mbr-fonts-style display-7 text-justify"><?php echo $media[$i]["body"]; ?></p>
                                             </div>
                                             <?php
+                                        } else if ($multimedia != "" && (!strpos($multimedia, "png") && !strpos($multimedia, "jpg"))) {
+                                            ?>
+                                            <div class="col-sm-12 col-md-5">
+                                                <div class="video-wrapper">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <video width="100%" controls>
+                                                            <source src="<?php echo $media[$i]['image']; ?>" type="video/mp4">
+                                                            Your browser does not support HTML5 video.
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7">
+                                                <h4 class="card-title pt-3 mbr-fonts-style display-6 text-center">
+                                                    <strong><?php echo $media[$i]['title']; ?></strong>
+                                                    <hr style="background: #339ccb; height: 1px; max-width: 400px; min-width: 200px"/>
+                                                </h4>
+                                                <p class="mbr-text mbr-fonts-style display-7 text-justify"><?php echo $media[$i]["body"]; ?></p>
+                                            </div>
+                                            <?php
                                         } else {
+
                                             ?>
                                             <div class="col-sm-12 col-md-12">
+
                                                 <h4 class="card-title pt-3 mbr-fonts-style display-6 text-center">
                                                     <strong><?php echo $media[$i]['title']; ?></strong>
                                                     <hr style="background: #339ccb; height: 1px; max-width: 400px; min-width: 200px"/>
@@ -118,12 +142,12 @@ if (count($media) < 1) {
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="card p-3 col-12 col-md-12">
-                            <div class="media-container-row">
+                            <div class="media-container-row" style="width: 100%">
                                 <div class="card-box">
 
-                                    <div class="row">
+                                    <div class="row" style="width: 100%">
                                         <?php
-                                        if ($media[$i]["image"] != "") {
+                                        if ($multimedia != "" && (strpos($multimedia, "png") || strpos($multimedia, "jpg"))) {
                                             ?>
                                             <div class="col-sm-12 col-md-4">
                                                 <img src="<?php echo $media[$i]['image']; ?>"
@@ -137,8 +161,27 @@ if (count($media) < 1) {
                                                 <?php echo $media[$i]["body"]; ?>
                                             </div>
                                             <?php
-                                        }
-                                        else {
+                                        } else if ($multimedia != "" && (!strpos($multimedia, "png") && !strpos($multimedia, "jpg"))) {
+                                            ?>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="video-wrapper">
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <video width="100%" controls>
+                                                            <source src="<?php echo $media[$i]['image']; ?>" type="video/mp4">
+                                                            Your browser does not support HTML5 video.
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mbr-text mbr-fonts-style display-7 text-justify col-sm-12 col-md-8">
+                                                <h4 class="card-title py-3 mbr-fonts-style display-6">
+                                                    <strong><?php echo $media[$i]["title"]; ?></strong>
+                                                    <hr style="background: #339ccb; height: 1px"/>
+                                                </h4>
+                                                <?php echo $media[$i]["body"]; ?>
+                                            </div>
+                                            <?php
+                                        } else {
                                             ?>
                                             <div class="mbr-text mbr-fonts-style display-7 text-justify col-sm-12 col-md-12">
                                                 <h4 class="card-title py-3 mbr-fonts-style display-6">
@@ -149,7 +192,7 @@ if (count($media) < 1) {
                                             </div>
                                             <?php
                                         }
-                                            ?>
+                                        ?>
                                     </div>
                                 </div>
                             </div>
